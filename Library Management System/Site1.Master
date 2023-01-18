@@ -1,0 +1,148 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="Library_Management_System.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+
+    <%--Bootstrap Css--%>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <%--DatTables css--%>
+    <link href="datatables/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <%--FontAwesome css--%>
+    <link href="fontawesome/css/all.css" rel="stylesheet" />
+
+    <%--Jquery--%>
+    <script src="bootstrap/js/jquery-3.3.1.slim.min.js"></script>
+    <%--Pooper Js--%>
+    <script src="bootstrap/js/popper.min.js"></script>
+    <%--Bootstrap js--%>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <%--DataTables js--%>
+    <script src="datatables/js/jquery.dataTables.min.js"></script>
+
+    <style>
+        .text-white {
+            --bs-text-opacity: inherit !important;
+            color: inherit !important;
+        }
+    </style>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <!--- Navbar --->
+            <nav class="navbar navbar-expand-lg">
+                <div class="container">
+                    <a class="navbar-brand text-white" href="#"><i class="fa fa-graduation-cap fa-lg mr-2">
+                    </i>Library Management System</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nvbCollapse"
+                        aria-controls="nvbCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="nvbCollapse">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item pl-1">
+                                <a href="homepage.aspx" class="nav-link" id="LinkButton1">Home</a>
+                            </li>
+                            <li class="nav-item pl-1">
+                                <asp:LinkButton class="nav-link" ID="LinkButton2" OnClick="LinkButton2_Click" runat="server">View Books</asp:LinkButton>
+                            </li>
+                            <li class="nav-item pl-1">
+                                <asp:LinkButton class="nav-link" ID="LinkButton3" OnClick="LinkButton3_Click" runat="server">User Login</asp:LinkButton>
+                            </li>
+                            <li class="nav-item pl-1">
+                                <asp:LinkButton class="nav-link" ID="LinkButton4" OnClick="LinkButton4_Click" runat="server">Sign Up</asp:LinkButton>
+                            </li>
+                            <li class="nav-item pl-1">
+                                <asp:LinkButton class="nav-link" Visible="false" ID="LinkButton5" OnClick="LinkButton5_Click" runat="server">Log Out</asp:LinkButton>
+                            </li>
+                            <li class="nav-item pl-1">
+                                <asp:LinkButton class="nav-link" Visible="false" ID="LinkButton6" OnClick="LinkButton6_Click" runat="server">Hello User</asp:LinkButton>
+                            </li>
+                            <%--<li class="nav-item active pl-1">
+                                <a class="nav-link" href="#"><i class="fa fa-th-list fa-fw mr-1"></i>Blog</a>
+                            </li>
+                            <li class="nav-item pl-1">
+                                <a class="nav-link" href="#"><i class="fa fa-info-circle fa-fw mr-1"></i>Hakkımızda</a>
+                            </li>
+                            <li class="nav-item pl-1">
+                                <a class="nav-link" href="#"><i class="fa fa-phone fa-fw fa-rotate-180 mr-1"></i>İletişim</a>
+                            </li>
+                            <li class="nav-item pl-1">
+                                <a class="nav-link" href="#"><i class="fa fa-user-plus fa-fw mr-1"></i>Kayıt Ol</a>
+                            </li>
+                            <li class="nav-item pl-1">                                
+                                <asp:LinkButton  class="nav-link" href="#"><i class="fa fa-sign-in fa-fw mr-1"></i>Oturum Aç</asp:LinkButton>
+                            </li>--%>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!--# Navbar #-->
+
+
+
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+
+
+
+            <!--- Footer --->
+            <footer>
+                <div class="jumbotron jumbotron-fluid bg-secondary p-4 mt-5 mb-0">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 cizgi">
+                                <div class="card bg-secondary border-0">
+                                    <div class="card-body text-light text-center">
+                                        <h5 class="card-title text-white display-4" style="font-size: 30px">Copyright</h5>
+                                        <p class="d-inline lead">
+                                            all Rights Reserved © 2023<br>
+                                            <a href="#" class="text-light d-block lead">Library Management System</a>
+                                        </p>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
+                                <div class="card bg-secondary border-0">
+                                    <div class="card-body text-center">                                        
+                                        <ul style="display:inline-flex; list-style:none">
+                                            <li>
+                                                <asp:LinkButton class="btn" ID="LinkButton7" OnClick="LinkButton7_Click" runat="server"> Admin login</asp:LinkButton>
+                                            </li>
+                                            <li>
+                                                <asp:LinkButton class="btn" Visible="false" ID="LinkButton8" OnClick="LinkButton8_Click" runat="server"> Author Management</asp:LinkButton>
+                                            </li>
+                                            <li>
+                                                <asp:LinkButton class="btn" Visible="false" ID="LinkButton9" OnClick="LinkButton9_Click" runat="server"> Publisher Management</asp:LinkButton>
+                                            </li>
+                                            <li>
+                                                <asp:LinkButton class="btn" Visible="false" ID="LinkButton10" OnClick="LinkButton10_Click" runat="server"> Book Inventory</asp:LinkButton>
+                                            </li>
+                                            <li>
+                                                <asp:LinkButton class="btn" Visible="false" ID="LinkButton11" OnClick="LinkButton11_Click" runat="server"> Book Issueing</asp:LinkButton>
+                                            </li>
+                                            <li>
+                                                <asp:LinkButton class="btn" Visible="false" ID="LinkButton12" OnClick="LinkButton12_Click" runat="server"> Member Management</asp:LinkButton>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!--# Footer #-->
+        </div>
+    </form>
+</body>
+</html>
